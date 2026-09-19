@@ -14,7 +14,7 @@ PHP com PDO, MySQL, HTML, CSS, JavaScript e Bootstrap.
 
 ## Telas
 
-Protótipo no Figma: https://www.figma.com/design/fp4LiiZBJAsogKmDKaA3w6/Mini-Sistema-de-Gest%25C3%25A3o-de-Produtos.?node-id=0-1&p=f&t=Rx1FHwKbUVgWJS2A-0
+Protótipo no Figma: https://www.figma.com/design/fp4LiiZBJAsogKmDKaA3w6/Mini-Sistema-de-Gest%C3%A3o-de-Produtos.?node-id=0-1&t=oeXHRHj1fY2r9vDa-1
 
 ![Login](docs/login.png)
 ![Cadastro de usuário](docs/cadastro-usuario.png)
