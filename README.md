@@ -23,3 +23,6 @@ Protótipo no Figma: https://www.figma.com/design/fp4LiiZBJAsogKmDKaA3w6/Mini-Si
 ![Carrinho](docs/carrinho.png)
 ![Atualização](docs/atualizacao.png)
 
+## Modelagem
+
+![DER](docs/der.png)
