@@ -26,3 +26,31 @@ Protótipo no Figma: https://www.figma.com/design/fp4LiiZBJAsogKmDKaA3w6/Mini-Si
 ## Modelagem
 
 ![DER](docs/der.png)
+
+## Funcionalidades
+
+- Cadastro de usuários com senha armazenada em hash SHA-256
+- Autenticação com sessão e proteção das páginas internas
+- Cadastro de produtos, fornecedores e cestas
+- Relacionamento entre objetos, cada produto possui um fornecedor e cada cesta pertence a um usuário
+- Atualização de produtos, fornecedores e cestas via AJAX, sem recarregar a página
+- Listagem de produtos com seleção por checkbox e validação no cliente e no servidor
+- Carrinho com resumo de usuário, quantidade de produtos e valor total
+- Criação automática do banco de dados e das tabelas na primeira execução
+
+## Como executar
+
+1. Clone o repositório dentro da pasta `htdocs` do XAMPP
+2. Inicie o Apache e o MySQL no painel de controle do XAMPP
+3. Acesse `http://localhost/mini-sistema-gestao-produtos`
+4. O banco de dados e as tabelas são criados automaticamente no primeiro acesso
+5. Crie um usuário na tela de cadastro e faça login
+
+## Estrutura do projeto
+
+As classes `Usuario`, `Fornecedor`, `Produto` e `Cesta` concentram as regras de
+negócio e o acesso ao banco. A classe `Conexao` utiliza o padrão Singleton para
+garantir uma única conexão PDO durante a execução.
+
+A tabela `cesta_produto` possui uma restrição de unicidade no par de chaves
+estrangeiras, o que garante que um produto apareça apenas uma vez em cada cesta.
