@@ -3,6 +3,7 @@
 require_once 'auth.php';
 require_once 'Fornecedor.php';
 require_once 'Produto.php';
+require_once 'Cesta.php';
 
 $mensagem = '';
 $tipoMensagem = '';
@@ -55,6 +56,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $produto->salvar();
 
             $mensagem = 'Produto cadastrado com sucesso.';
+            $tipoMensagem = 'success';
+        }
+    }
+    if ($acao === 'cesta') {
+        $nome = trim($_POST['nome'] ?? '');
+
+        if ($nome === '') {
+            $mensagem = 'Informe o nome da cesta.';
+            $tipoMensagem = 'danger';
+        } else {
+            $usuario = Usuario::buscarPorId($_SESSION['usuario_id']);
+
+            $cesta = new Cesta(null, $nome, $usuario);
+            $cesta->salvar();
+
+            $mensagem = 'Cesta cadastrada com sucesso.';
             $tipoMensagem = 'success';
         }
     }
@@ -186,7 +203,7 @@ $fornecedores = Fornecedor::listarTodos();
                             <input type="text" class="form-control" value="<?= htmlspecialchars($_SESSION['usuario_nome']) ?>" disabled>
                         </div>
 
-                        <button type="submit" class="btn btn-primary" disabled>Salvar cesta</button>
+                        <button type="submit" class="btn btn-primary">Salvar cesta</button>
                     </form>
                 </div>
             </div>
